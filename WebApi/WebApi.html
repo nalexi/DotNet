@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Projeto Web Api</title>
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/classic.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <div>
+        <form id="SaveContactForm" method="post">
+            <input type="text" name="Usuario1" placeholder="informe nome do usuario" />
+            <input type="button" value="save" id="saveContact" />
+        </form>
+    </div>
+
+    <div id="gridContent">
+        <div id="exemplo"></div>
+    </div>
+
+    <div id="carro"></div>
+    <div id="marca"></div>
+    <div id="usuario"></div>
+    <div id="venda"></div>
+    <div>
+        <input type="Button" id="ButtonId" value="Id" />
+        <input type="text" id="id" placeholder="Digite id" />
+    </div>
+    <div>
+        <label for="id">Id</label>
+        <input type="text" id="txId" name="id" />
+    </div> <div>
+        <label for="ativo">Ativo</label>
+        <input type="text" id="txAtivo" name="ativo" />
+    </div>
+    <div>
+        <label for="usuInc">usuInc</label>
+        <input type="text" id="txusuInc" name="usuInc" />
+    </div>
+    <div>
+        <label for="usuAlt">usuAlt</label>
+        <input type="text" id="txusuAlt" name="usuAlt" />
+    </div>
+    <div>
+        <label for="DatInc">DatInc</label>
+        <input type="text" id="txDatInc" name="DatInc" />
+    </div>
+    <div>
+        <label for="DatAlt">DatAlt</label>
+        <input type="text" id="txDatAlt" name="DatAlt" />
+    </div>
+
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript"
+            src="jquery.columns.min.js"></script>
+
+    <script>
+        $('#saveContact').click(function () {
+            $.post("http://localhost:64369/Api/Usuarios",
+                $('#SaveContactForm').serialize(),
+                function (value) {
+                    GridRefresh();
+                }, "json");
+        });
+
+        $(document).ready(function () {
+            $('#ButtonId').click(function () {
+                var id = $('#id').val();
+                $.getJSON("http://localhost:64369/Api/Usuarios/" + id, function (data) {
+                    $("#txId").val(data.Usuario1);
+                    $("#txAtivo").val(data.Ativo);
+                    $("#txusuInc").val(data.UsuInc);
+                    $("#txusuAlt").val(data.UsuAlt);
+                    $("#txDatInc").val(data.DatInc);
+                    $("#txDatAlt").val(data.DatAlt);
+                });
+            });
+        });
+
+        function CadastroUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:64369/Api/Usuarios',
+                data: $('#SaveformUsu').serializeArray(),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+            });
+        }
+
+        function GridRefresh() {
+            $.get('http://localhost:64369/Api/Usuarios', function (dataApi) {
+                $('#gridContent').html("<div id=\"exemplo\"><\div>");
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+        $.get('http://localhost:64369/Api/Usuarios', function (dataApi) {
+            $('#usuario').columns({ data: dataApi });
+        });
+        //$.get('http://localhost:64369/Api/Values', function (dataApi) {
+        //    $('#carro').columns({ data: dataApi });
+        //});
+        //
+        //$.get('http://localhost:64369/Api/Marcas', function (dataApi) {
+        //    $('#marca').columns({ data: dataApi });
+        //});
+        //
+        //$.get('http://localhost:64369/Api/Vendas', function (dataApi) {
+        //    $('#venda').columns({ data: dataApi });
+        //});
+    </script>
+</body>
+</html>
