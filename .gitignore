@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Projeto Web
+WEBAPIRESTFULL/WEBAPIRESTFULL/SITETESTAPIRESTFULL/bower_components/
