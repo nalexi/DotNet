@@ -6,9 +6,9 @@ jQuery(document).ready(function () {
         //$('#bntSalvar').hide();
         $('#bntCancelar').hide();
         $('#Id').val("");
-        $('#Nome').val("");
+        $('#Tipo').val("");
         $('#Descricao').val("");
-
+		$('#Editora').val("");
         $('#Ativo select').val("true");
     });
 
@@ -23,7 +23,7 @@ function GetByID(id) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:59271/Api/Autores/" + id,
+        "url": "http://localhost:59271/Api/Generos/" + id,
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
@@ -33,19 +33,37 @@ function GetByID(id) {
 
     $.ajax(settings).done(function (response) {
         $('#Id').val(response.Id);
-        $('#Nome').val(response.Nome);
+        $('#Tipo').val(response.Tipo);
         $('#Descricao').val(response.Descricao);
-
+		$('#Editora').val(response.Descricao);
         $('#Ativo select').val(response.Ativo);
     });
 
+}
+
+
+function Deleting(id) {
+    var settings = {
+        "crossDomain": true,
+        "url": "http://localhost:59271/Api/Generos/" + id,
+        "method": "DELETE",
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*"
+        }
+    }
+
+    $.ajax(settings).done(function (response) {
+        GetMethod(null);
+    });
 }
 
 function GetMethod(object) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:59271/Api/Autores",
+        "method": "GET",
+        "url": "http://localhost:59271/Api/Generos",
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
@@ -66,7 +84,8 @@ function RefrestGrid(contentValue) {
         + '<tr>'
         + '<th>ID</th>'
         + '<th>Nome</th>'
-        + '<th>Descrição</th>'
+		+ '<th>Descrição</th>'
+
         + '<th>Opções</th>'
         + '</tr>'
         + '</tbody>');
@@ -74,22 +93,22 @@ function RefrestGrid(contentValue) {
     $.each(contentValue, function (index, value) {
         var row = '<tr>'
             + '<td>' + value.Id + '</td>'
-            + '<td>' + value.Nome + '</td>'
-            + '<td>' + value.Descricao + '</td>'
+			+ '<td>' + value.Tipo + '</td>'
+			+ '<td>' + value.Descricao + '</td>'
+
             + '<td>'
             + '<div    class=\'col-md-12\' style=\'float: right;\'>'
             + '<div    class=\'col-md-6\'>'
-            + '<button class=\'btn btn-block btn-danger col-md-3 ajax btn-delete-event\' send-post=\'Autores\' type=\'button\'  value=\''+ value.Id + '\' >Remover</button>'
+            + '<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting(' + value.Id + ')\'>Remover</button>'
             + '</div>'
             + '<div     class=\'col-md-6\'>'
-            + '<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Autores\' type=\'button\'  value=\'' + value.Id + '\' >Editar</button>'
+            + '<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID(' + value.Id + ')\'\>Editar</button>'
             + '</div>'
             + '</div>'
             + '</td>'
             + '</tr>';
         $('#tDataGrid').append(row);
     });
-    SetGridClickEvents();
 }
 
 
