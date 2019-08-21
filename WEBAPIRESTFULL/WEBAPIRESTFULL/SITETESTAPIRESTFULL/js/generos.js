@@ -1,16 +1,6 @@
 
 jQuery(document).ready(function () {
 
-    jQuery('#bntCancelar').click(function () {
-        //$('#bntSubmit').show();
-        //$('#bntSalvar').hide();
-        $('#bntCancelar').hide();
-        $('#Id').val("");
-        $('#Tipo').val("");
-        $('#Descricao').val("");
-		$('#Editora').val("");
-        $('#Ativo select').val("true");
-    });
 
     GetMethod(null);
 });
@@ -99,10 +89,10 @@ function RefrestGrid(contentValue) {
             + '<td>'
             + '<div    class=\'col-md-12\' style=\'float: right;\'>'
             + '<div    class=\'col-md-6\'>'
-            + '<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting(' + value.Id + ')\'>Remover</button>'
+            + '<button class=\'btn btn-block btn-danger col-md-3 ajax btn-delete-event\' send-post=\'Generos\' type=\'button\'  value=\''+ value.Id + '\' >Remover</button>'
             + '</div>'
             + '<div     class=\'col-md-6\'>'
-            + '<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID(' + value.Id + ')\'\>Editar</button>'
+            + '<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Generos\' type=\'button\'  value=\'' + value.Id + '\' >Editar</button>'
             + '</div>'
             + '</div>'
             + '</td>'

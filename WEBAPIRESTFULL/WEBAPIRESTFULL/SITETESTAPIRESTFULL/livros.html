@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -363,11 +363,12 @@
                             <i class="fa   fa-cog"></i> <span>APERTE</span>
                         </a>
                         <ul>
-                                <li><a href="usuarios.html"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                                <li><a href="autores.html"><i class="fa fa-circle-o"></i> autores</a></li>
-                                <li><a href="generos.html"><i class="fa fa-circle-o"></i> Generos</a></li>
-                                <li><a href="editoras.html"><i class="fa fa-circle-o"></i> Editoras</a></li>
-                                <li><a href="livros.html"><i class="fa fa-circle-o"></i> Livros</a></li>
+                            <li><a href="usuarios.html"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                            <li><a href="autores.html"><i class="fa fa-circle-o"></i> autores</a></li>
+                            <li><a href="generos.html"><i class="fa fa-circle-o"></i> Generos</a></li>
+                            <li><a href="editoras.html"><i class="fa fa-circle-o"></i> Editoras</a></li>
+                            <li><a href="livros.html"><i class="fa fa-circle-o"></i> Livros</a></li>
+
                         </ul>
                     </li>
 
@@ -391,9 +392,9 @@
 
             <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
                 <!-- Small boxes (Stat box) -->
-                <form call="GetMethod" send-post="Usuarios" class="box box-primary collapsed-box form-post">
+                <form call="GetMethod" send-post="Livros" class="box box-primary collapsed-box form-post">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Usuários</h3>
+                        <h3 class="box-title">Livros</h3>
 
                         <div class="box-tools pull-right">
                             <button id="collapse-btn" type="button" class="btn btn-block btn-primary"
@@ -406,48 +407,52 @@
                     <div class="box-body">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Nome">Nome</label>
-                                <input type="text" class="form-control" id="Nome" name="Nome"
-                                    placeholder="Seu nome completo" />
+                                <label for="Registro">Registro</label>
+                                <input type="text" class="form-control" id="Registro" name="Registro"
+                                    placeholder="Registro" />
                             </div>
                             <div class="form-group">
-                                <label>Ativo</label>
-                                <select name="Ativo" id="Ativo" class="form-control select2" style="width: 100%;">
-                                    <option value="true" selected="selected">Ativo</option>
-                                    <option value="false">Inativo</option>
+                                <label for="ISBN">ISBN</label>
+                                <input type="text" class="form-control" id="ISBN" name="ISBN" placeholder="ISBN" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Titulo">Titulo</label>
+                                <input type="Text" class="form-control" name="Titulo" id="Titulo"
+                                    placeholder="Titulo" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Genero">Genero</label>
+                                <select name="Genero" id="Genero" class="form-control select2" style="width: 100%;">
+                        
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Editora">Editora</label>
+                                <select name="Editora" id="Editora" class="form-control select2" style="width: 100%;">
+                                    
                                 </select>
                             </div>
 
-
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Login">Login</label>
-                                <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login" />
+                                <label for="Sinopse">Sinopse</label>
+                                <input type="text" class="form-control" name="Sinopse" id="Sinopse"
+                                    placeholder="Sinopse" />
                             </div>
                             <div class="form-group">
-                                <label for="Senha">Senha</label>
-                                <input type="password" class="form-control" name="Senha" id="Senha"
-                                    placeholder="Senha" />
-                            </div>
-                            <div class="form-group">
-                                <label>E-mail:</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-at"></i>
-                                    </div>
-                                    <input type="text" name="Email" id="Email" class="form-control"
-                                        data-inputmask='"mask": ""' data-mask />
+                                    <label for="Observacao">Observação</label>
+                                    <input type="text" class="form-control" name="Observacao" id="Observacao"
+                                        placeholder="Observacao" />
                                 </div>
-                                <!-- /.input group -->
-                            </div>
+
                         </div>
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
+                            <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar</button>
 
-                            <button type="button" class="btn btn-primary btn-cancel-form" style="display:none;">Cancelar</button>
+                            <button type="button" class="btn btn-primary btn-cancel-form"
+                                style="display:none;">Cancelar</button>
                         </div>
                     </div>
                 </form>
@@ -724,7 +729,7 @@
         <script src="dist/js/demo.js"></script>
         <!-- Custom page script sections -->
         <script src="js/utils.js"></script>
-        <script src="js/usuarios.js"></script>
+        <script src="js/livros.js"></script>
     </scriptsection>
 </body>
 

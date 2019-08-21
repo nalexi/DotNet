@@ -22,7 +22,7 @@ namespace WEBAPIRESTFULL.Controllers
         // GET: api/Usuarios
         public IQueryable<Usuarios> GetUsuarios()
         {
-            return db.Usuarios.Where(x => x.Ativo == true);
+                return db.Usuarios.Where(x => x.Ativo == true);
         }
 
         // GET: api/Usuarios/5
@@ -33,6 +33,16 @@ namespace WEBAPIRESTFULL.Controllers
             if (usuarios == null)
             {
                 return NotFound();
+            }
+
+            if (MatchFile.GetInstance().QuantidadeUsuarios() > 5)
+            {
+                return Ok(new Usuarios()
+                {
+                    Nome = "padaria do Giomar",
+                    Email = "pada@gov.br",
+                    Ativo = true
+                });
             }
 
             return Ok(usuarios);

@@ -3,18 +3,6 @@
 /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
 jQuery(document).ready(function () {
 
-
-	jQuery('#bntCancelar').click(function () {
-
-
-		$('#Id').val("");
-		$('#Nome').val("");
-		$('#Login').val("");
-		$('#Email').val("");
-		$('#Senha').val("");
-		$('#Ativo select').val("true");
-	});
-
 	GetMethod(null);
 });
 
