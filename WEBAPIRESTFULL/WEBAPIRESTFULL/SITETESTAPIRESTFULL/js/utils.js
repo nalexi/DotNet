@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
         var dados = $(this).serialize();
         var sendpost = $(this).attr('send-post');
         var callstr = $(this).attr('call');
-        method = "POST";
+        var method = "POST";
 
         if (id !== "") {
             method = "PUT";
@@ -39,7 +39,7 @@ jQuery(document).ready(function () {
             window[callstr](response);
         });
 
-        $.each(form, function (index, value) {
+        $.each(this, function (index, value) {
             $('[name=\'' + value.name + '\']').val("");
         });
         return false;

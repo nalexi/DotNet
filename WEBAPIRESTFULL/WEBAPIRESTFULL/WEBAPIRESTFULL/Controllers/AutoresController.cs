@@ -98,7 +98,7 @@ namespace WEBAPIRESTFULL.Controllers
                 return NotFound();
             }
 
-            db.Autores.Find(id).Ativo = false;
+            autores.Ativo = false;
             db.SaveChanges();
 
             return Ok(autores);

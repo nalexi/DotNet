@@ -1,4 +1,6 @@
 
+var generosList;
+var editorasList;
 
 /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
 jQuery(document).ready(function () {
@@ -9,7 +11,7 @@ jQuery(document).ready(function () {
 
 function GetMethod(object) {
 	var settings = {
-		"async": true,
+		
 		"crossDomain": true,
 		"url": "http://localhost:59271/Api/Usuarios",
 		"method": "GET",
