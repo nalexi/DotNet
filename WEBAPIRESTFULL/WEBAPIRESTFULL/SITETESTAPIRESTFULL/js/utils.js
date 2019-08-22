@@ -7,7 +7,6 @@ function buildUrlApi(sendpost, id = '') {
     return urlBaseApi + sendpost + id;
 }
 
-
 jQuery(document).ready(function () {
     /* Indica que o evento submit do form irá realizar esta ação agora*/
     jQuery('.form-post').submit(function () {
@@ -48,6 +47,7 @@ jQuery(document).ready(function () {
 
     jQuery('.btn-cancel-form').click(function () {
         var form = $(this).parent().parent().parent()[0];
+        
         $.each(form, function (index, value) {
             $('[name=\'' + value.name + '\']').val("");
         });

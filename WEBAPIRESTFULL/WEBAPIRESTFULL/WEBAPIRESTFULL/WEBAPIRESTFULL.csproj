@@ -190,6 +190,14 @@
     <Compile Include="Migrations\201908211436006_third.Designer.cs">
       <DependentUpon>201908211436006_third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908221216243_fouth.cs" />
+    <Compile Include="Migrations\201908221216243_fouth.Designer.cs">
+      <DependentUpon>201908221216243_fouth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221252381_fifth.cs" />
+    <Compile Include="Migrations\201908221252381_fifth.Designer.cs">
+      <DependentUpon>201908221252381_fifth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autores.cs" />
     <Compile Include="Models\BibliotecaContextDB.cs" />
@@ -294,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908211436006_third.resx">
       <DependentUpon>201908211436006_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221216243_fouth.resx">
+      <DependentUpon>201908221216243_fouth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221252381_fifth.resx">
+      <DependentUpon>201908221252381_fifth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

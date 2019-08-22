@@ -386,7 +386,7 @@
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Usuários</li>
+                    <li class="active">Livros</li>
                 </ol>
             </section>
 
@@ -408,13 +408,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="Registro">Registro</label>
-                                <input type="text" class="form-control" id="Registro" name="Registro"
+                                <input type="Text" class="form-control" name="Registro" id="Registro"
                                     placeholder="Registro" />
                             </div>
                             <div class="form-group">
-                                <label for="ISBN">ISBN</label>
-                                <input type="text" class="form-control" id="ISBN" name="ISBN" placeholder="ISBN" />
+                                <label for="Isbn">Isbn</label>
+                                <input type="Text" class="form-control" name="Isbn" id="Isbn" placeholder="Isbn" />
                             </div>
+
                             <div class="form-group">
                                 <label for="Titulo">Titulo</label>
                                 <input type="Text" class="form-control" name="Titulo" id="Titulo"
@@ -424,26 +425,25 @@
                             <div class="form-group">
                                 <label for="Genero">Genero</label>
                                 <select name="Genero" id="Genero" class="form-control select2" style="width: 100%;">
-                        
+
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="Editora">Editora</label>
                                 <select name="Editora" id="Editora" class="form-control select2" style="width: 100%;">
-                                    
+
                                 </select>
                             </div>
-
+                            <div class="form-group">
+                                <label for="Observacoes">Observação</label>
+                                <input type="text" class="form-control" name="Observacoes" id="Observacoes"
+                                    placeholder="Observacoes" />
+                            </div>
                             <div class="form-group">
                                 <label for="Sinopse">Sinopse</label>
                                 <input type="text" class="form-control" name="Sinopse" id="Sinopse"
                                     placeholder="Sinopse" />
                             </div>
-                            <div class="form-group">
-                                    <label for="Observacao">Observação</label>
-                                    <input type="text" class="form-control" name="Observacao" id="Observacao"
-                                        placeholder="Observacao" />
-                                </div>
 
                         </div>
                         <!-- /.box-body -->
@@ -451,8 +451,7 @@
                         <div class="box-footer">
                             <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar</button>
 
-                            <button type="button" class="btn btn-primary btn-cancel-form"
-                                style="display:none;">Cancelar</button>
+                            <button type="button" class="btn btn-primary btn-cancel-form">Cancelar</button>
                         </div>
                     </div>
                 </form>
@@ -465,7 +464,7 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Usuários</h3>
+                                <h3 class="box-title">Livros</h3>
 
                                 <div class="box-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -484,9 +483,8 @@
                                     <tr>
                                         <th data-options="field:'Id',width:100">ID</th>
                                         <th>Nome</th>
-                                        <th>Login</th>
-                                        <th>E-mail</th>
-                                        <th>login</th>
+                                        <th>Titulo</th>
+                                        <th>Descrição</th>
                                         <th>Opções</th>
                                     </tr>
                                 </table>
